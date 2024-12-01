@@ -1,4 +1,3 @@
-<!-- HTML Form for Creating Post -->
 <link rel="stylesheet" href="styles.css">
 <div class="registration-container">
     <div class="form-card">

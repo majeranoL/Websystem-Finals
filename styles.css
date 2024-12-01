@@ -6,10 +6,10 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif; /* Modern sans-serif font */
-    background-color: #121212; /* Dark background */
-    color: #e0e0e0; /* Light text color on dark background */
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    overflow-x: hidden;
 }
 
 a {
@@ -19,7 +19,7 @@ a {
 
 /* Navbar */
 .navbar {
-    background: linear-gradient(90deg, #2c3e50 0%, #34495e 100%); /* Dark gradient background */
+    background: linear-gradient(90deg, #2c3e50 0%, #34495e 100%);
     padding: 5px 15px;
     display: flex;
     justify-content: space-between;
@@ -28,8 +28,8 @@ a {
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25); /* Deeper shadow for depth */
-    animation: fadeIn 0.8s ease-out; /* Fade-in effect */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.8s ease-out;
 }
 
 .navbar .logo {
@@ -37,17 +37,17 @@ a {
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 2px;
-    animation: slideIn 1s ease-out; /* Slide-in effect */
+    animation: slideIn 1s ease-out;
 }
 
 .navbar .menu {
     display: flex;
     gap: 10px;
-    animation: fadeIn 1s ease-out 0.3s; /* Fade-in effect for the menu */
+    animation: fadeIn 1s ease-out 0.3s;
 }
 
 .menu a {
-    color: #ecf0f1; /* Light text for links */
+    color: #ecf0f1;
     font-size: 18px;
     padding: 10px 15px;
     border-radius: 5px;
@@ -56,9 +56,9 @@ a {
 }
 
 .menu a:hover {
-    background-color: #3b82f6; /* Accent blue for hover */
-    transform: scale(1.05); /* Subtle scaling effect */
-    animation: bounce 0.4s ease-out; /* Bounce effect */
+    background-color: #3b82f6;
+    transform: scale(1.05);
+    animation: bounce 0.4s ease-out;
 }
 
 /* Search Bar */
@@ -67,31 +67,31 @@ a {
     display: flex;
     justify-content: center;
     opacity: 0;
-    animation: fadeIn 1s ease-out 0.6s forwards; /* Fade-in with delay */
+    animation: fadeIn 1s ease-out 0.6s forwards;
 }
 
 .search-input {
     padding: 12px 15px;
-    border: 1px solid #444; /* Darker border */
+    border: 1px solid #444;
     border-radius: 50px;
     outline: none;
     font-size: 16px;
     width: 280px;
-    background-color: #2c3e50; /* Darker input background */
-    color: #ecf0f1; /* Light text color for input */
+    background-color: #2c3e50;
+    color: #ecf0f1;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
 
 .search-input:focus {
-    border-color: #3b82f6; /* Blue border on focus */
+    border-color: #3b82f6;
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-    animation: pulse 1.2s infinite; /* Pulse effect on focus */
+    animation: pulse 1.2s infinite;
 }
 
 .search-btn {
     padding: 12px 20px;
-    background-color: #3b82f6; /* Blue button */
+    background-color: #3b82f6;
     color: white;
     border: none;
     border-radius: 50px;
@@ -102,46 +102,46 @@ a {
 }
 
 .search-btn:hover {
-    background-color: #2563eb; /* Darker blue on hover */
-    transform: translateY(-2px); /* Elevation effect */
-    animation: shake 0.5s ease-out; /* Shake effect */
+    background-color: #2563eb;
+    transform: translateY(-2px);
+    animation: shake 0.5s ease-out;
 }
 
 /* Content */
 .content {
     display: flex;
     padding: 30px;
-    margin-top: 80px; /* Space for fixed navbar */
-    animation: slideInUp 1s ease-out; /* Slide-up effect */
-    justify-content: flex-start; /* Align items horizontally */
+    margin-top: 80px;
+    animation: slideInUp 1s ease-out;
+    justify-content: flex-start;
 }
 
 /* Sidebar */
 .sidebar {
     width: 300px;
     padding-top: 80px;
-    margin-right: 30px; /* Margin to separate sidebar from content */
-    animation: slideInLeft 1s ease-out; /* Slide-in from the left */
+    margin-right: 30px;
+    animation: slideInLeft 1s ease-out;
 }
 
 .sidebar-item {
-    background-color: #1e2a3a; /* Darker sidebar item background */
+    background-color: #1e2a3a;
     padding: 20px;
     margin-bottom: 25px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease;
     opacity: 0;
-    animation: fadeIn 1s ease-out forwards; /* Fade-in effect */
+    animation: fadeIn 1s ease-out forwards;
 }
 
 .sidebar-item:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Hover effect with deeper shadow */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar-item h3 {
     font-size: 22px;
-    color: #bdc3c7; /* Lighter gray text */
+    color: #bdc3c7;
     margin-bottom: 15px;
 }
 
@@ -151,7 +151,7 @@ a {
 
 .sidebar-item ul li {
     margin: 12px 0;
-    color: #ecf0f1; /* Light text for list items */
+    color: #ecf0f1;
 }
 
     .feed {
@@ -160,18 +160,18 @@ a {
 
 /* Post */
 .post {
-    background-color: #1e2a3a; /* Dark post background */
+    background-color: #1e2a3a;
     padding: 30px;
     margin-bottom: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease;
-    animation: fadeIn 1s ease-out; /* Fade-in effect */
+    animation: fadeIn 1s ease-out;
 }
 
 .post:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Hover effect for posts */
-    animation: bounce 0.4s ease-out; /* Bounce effect */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    animation: bounce 0.4s ease-out;
 }
 
 .post-header {
@@ -194,17 +194,17 @@ a {
 .user-info .user-name {
     font-size: 18px;
     font-weight: bold;
-    color: #3b82f6; /* Highlight user name with blue */
+    color: #3b82f6;
 }
 
 .post-content {
     margin-bottom: 20px;
-    color: #bdc3c7; /* Softer gray text */
+    color: #bdc3c7;
     font-size: 16px;
 }
 
 .post-footer button {
-    background-color: #3b82f6; /* Blue button */
+    background-color: #3b82f6;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -215,13 +215,13 @@ a {
 }
 
 .post-footer button:hover {
-    background-color: #2563eb; /* Darker blue on hover */
-    transform: translateY(-2px); /* Elevation effect */
+    background-color: #2563eb;
+    transform: translateY(-2px);
 }
 
 /* Footer */
 footer {
-    background: linear-gradient(90deg, #2c3e50 0%, #34495e 100%); /* Dark gradient */
+    background: linear-gradient(90deg, #2c3e50 0%, #34495e 100%);
     padding: 15px;
     text-align: center;
     color: #fff;
@@ -241,7 +241,7 @@ body.registration-page {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #121212; /* Dark background */
+    background-color: #121212;
 }
 
 .registration-container {
@@ -253,24 +253,24 @@ body.registration-page {
 }
 
 .form-card {
-    background-color: #1e2a3a; /* Dark form background */
+    background-color: #1e2a3a;
     width: 100%;
     text-align: center;
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     padding: 35px;
-    animation: fadeInUp 1s ease-out; /* Fade-in with upward motion */
+    animation: fadeInUp 1s ease-out;
 }
 
 .form-card h2 {
     font-size: 34px;
     font-weight: 700;
-    color: #3b82f6; /* Blue color for registration heading */
+    color: #3b82f6; 
     margin-bottom: 20px;
 }
 
 .form-card p {
-    color: #bdc3c7; /* Softer gray text for paragraph */
+    color: #bdc3c7;
     font-size: 16px;
     margin-bottom: 25px;
 }
@@ -288,8 +288,8 @@ body.registration-page {
 }
 
 .form-control:focus {
-    border-color: #3b82f6; /* Blue border on focus */
-    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); /* Subtle glow */
+    border-color: #3b82f6;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
 }
 
 /* Buttons */
@@ -313,18 +313,18 @@ body.registration-page {
 }
 
 .fullname-btn {
-    background-color: #4CAF50; /* Green button */
+    background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
     font-weight: bold;
-    margin-left: 10px; /* Optional space between links */
+    margin-left: 10px;
 }
 
 .fullname-btn:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #45a049;
     cursor: pointer;
 }
 
@@ -356,15 +356,15 @@ body.registration-page {
 
 /* Modal Styles */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed in place */
-    z-index: 1; /* On top */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Enable scrolling if needed */
-    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {

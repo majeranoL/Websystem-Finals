@@ -4,7 +4,7 @@ session_start();
 
 <?php 
     include('includes/navbar.php'); 
-    include('includes/sidebar.php'); // Include the sidebar here
+    include('includes/sidebar.php');
 ?>
 
 <div class="main-container">

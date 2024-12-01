@@ -13,7 +13,6 @@
     }
 ?>
 
-<!-- Link to Styles -->
 <body class="registration-page">
 <link rel="stylesheet" href="Styles.css">
 <div class="registration-container">

@@ -2,11 +2,11 @@
 require_once($_SERVER["DOCUMENT_ROOT"]."/app/config/Directories.php");
 session_start();
 
-// Log out process
-session_unset();  // Unset all session variables
-session_destroy(); // Destroy the session
 
-// Include the navbar
+session_unset(); 
+session_destroy();
+
+
 require_once(ROOT_DIR . "includes/navbar.php");
 
 ?>
