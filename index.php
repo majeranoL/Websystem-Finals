@@ -2,12 +2,13 @@
 session_start();
 ?>
 
-<?php 
-    include('includes/navbar.php'); 
-    include('includes/sidebar.php');
+<?php   
+    include('includes/navbar.php');  
 ?>
-
+<link rel="stylesheet" href="Styles/Buttons.css">
 <div class="main-container">
+    
+    <?php include('includes/sidebar.php'); ?>
     <!-- Content Section -->
     <div class="content">
         <div class="feed">
@@ -28,5 +29,5 @@ session_start();
     </div>
 
     <!-- Create Post Button -->
-    <a href="login.php" class="create-post-btn">+</a>
+    <!-- <a href="login.php" class="create-post-btn">+</a> -->
 </div>

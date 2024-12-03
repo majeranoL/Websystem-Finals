@@ -2,12 +2,12 @@
 session_start();
 ?>
 
-<?php 
-    include('includes/navbar.php'); 
-    include('includes/sidebar.php'); // Include the sidebar here
-?>
+<?php include('includes/navbar.php'); ?>
 
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="Styles/Buttons.css">
 <div class="main-container">
+<?php include('includes/sidebar.php'); ?>
     <!-- Content Section -->
     <div class="content">
         <div class="feed">

@@ -12,7 +12,7 @@
     }
 ?>
 
-<link rel="stylesheet" href="Styles.css">
+<link rel="stylesheet" href="Styles/Regform.css">
 <body class="registration-page">
 <div class="registration-container">
     <div class="form-card">

@@ -7,12 +7,9 @@ session_unset();
 session_destroy();
 
 
-require_once(ROOT_DIR . "includes/navbar.php");
-
 ?>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
 <div class="container vh-100 d-flex justify-content-center align-items-center">
     <div class="card text-center shadow p-3" style="width: 24rem;">
         <div class="card-body">
