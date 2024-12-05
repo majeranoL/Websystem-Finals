@@ -49,7 +49,7 @@
 /* Sidebar */
 .sidebar {
     background-color: #1a1a1a; /* Distinct dark blue-gray background for the sidebar */
-    height: calc(100vh - 60px); /* Ensure it fits below the navbar */
+    height: calc(100vh - 40px); /* Ensure it fits below the navbar */
     overflow-y: auto;
     position: fixed;
     margin-top: -15px; /* Align with the height of the navbar */

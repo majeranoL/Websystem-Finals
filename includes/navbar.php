@@ -45,7 +45,29 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current page name
             <?php if (isset($_SESSION['user_id'])): ?>
                 <!-- Show Home and Messages links if logged in -->
                 <a href="user.php" <?php echo $current_page == 'user.php' ? 'class="active"' : ''; ?>>Home</a>
-                <a href="messages.php" <?php echo $current_page == 'messages.php' ? 'class="active"' : ''; ?>>Messages</a>
+
+
+
+
+            <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Messages
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end"  aria-labelledby="messagesDropdown"
+            style="background-color: #1a1a1a; border: none;" id="messagesList">
+                <!-- Sample messages; replace with dynamic content later -->
+                <li><a class="dropdown-item" href="#" style="color: rgba(255, 255, 255, 0.9); padding: 10px 20px; background-color: #1a1a1a;"
+                onclick="openChat('John Doe')">John Doe</a></li>
+                <li><a class="dropdown-item" href="#"
+                style="color: rgba(255, 255, 255, 0.9); padding: 10px 20px; background-color: #1a1a1a;" onclick="openChat('Jane Smith')">Jane Smith</a></li>
+            </ul>
+            </div>
+
+
+
+
+                <!-- notification -->
+                <a href="notification.php" <?php echo $current_page == 'notification.php' ? 'class=active': ''; ?>>Notifications</a>
                 
             <!-- Dropdown for user profile options -->
             <div class="nav-item dropdown">

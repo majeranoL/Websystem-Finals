@@ -23,7 +23,7 @@
             <input type="password" class="form-control" name="password" placeholder="Password" required>
             <button type="submit" class="btn-register">Login</button>
         </form>
-        <a href="Registration.php" style="">No Account yet? Sign up here</a>
+        <a href="Registration.php">No Account yet? Sign up here</a>
     </div>
 </div>
 </body>

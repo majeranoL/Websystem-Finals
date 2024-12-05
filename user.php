@@ -27,8 +27,14 @@ session_start();
         </div>
     </div>
 
-    <!-- Create Post Button -->
-    <button class="create-post-btn" onclick="openModal()">+</button>
+<!-- Create Post Button -->
+<button class="create-post-btn" onclick="openModal()" style="position: fixed; bottom: 10px; right: 10px; z-index: 1000;">+</button>
+
+<!-- Chat Container (Positioned beside the button) -->
+<div id="chatContainer" style="position: fixed; bottom: -20px; right: 80px; max-width: 300px; z-index: 1050;">
+    <!-- Chat windows will dynamically appear here -->
+</div>
+
 </div>
 
 <!-- Modal -->
@@ -84,3 +90,70 @@ session_start();
     };
 </script>
 
+<script>
+function openChat(userName) {
+    // Check if the chat window already exists
+    if (document.getElementById('chat-' + userName)) {
+        return; // Chat window already open
+    }
+
+    // Create a chat window
+    const chatWindow = document.createElement('div');
+    chatWindow.id = 'chat-' + userName;
+    chatWindow.classList.add('chat-window');
+    chatWindow.style = `
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background: #1a1a1a;
+    border: none; /* Remove the white outline */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+`;
+
+
+    // Add chat header
+    chatWindow.innerHTML = `
+    <div style="background: #3b5998; color: #1a1a1a; padding: 10px; border-radius: 8px 8px 0 0; display: flex; justify-content: space-between;">
+        <span>${userName}</span>
+        <button style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;" onclick="closeChat('${userName}')">×</button>
+    </div>
+    <div style="flex: 1; padding: 10px; overflow-y: auto;">
+        <p>Chat with ${userName}</p>
+        <!-- Chat messages will go here -->
+    </div>
+    <div style="padding: 10px; border-top: 1px solid #ccc;">
+        <input type="text" placeholder="Type a message" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc; background: #1a1a1a; color: white;">
+    </div>
+`;
+
+
+    // Append the chat window to the container
+    const chatContainer = document.getElementById('chatContainer');
+    chatContainer.appendChild(chatWindow);
+
+    // Get the number of existing chat windows
+    const chatWindows = document.getElementsByClassName('chat-window');
+
+    // Calculate the right position based on the number of open chats
+    const windowWidth = chatWindow.offsetWidth;
+    const gap = 10; // Space between chat windows
+    const rightPosition = (chatWindows.length * (windowWidth + gap)) + gap; // Adjusted right position
+
+    // Set the position of the new chat window
+    chatWindow.style.right = rightPosition + 'px';
+    chatWindow.style.bottom = '10px'; // Align all chat windows at the same bottom position
+}
+
+function closeChat(userName) {
+    const chatWindow = document.getElementById('chat-' + userName);
+    if (chatWindow) {
+        chatWindow.remove(); // Remove the chat window
+    }
+}
+
+
+</script>
