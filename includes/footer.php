@@ -15,7 +15,7 @@ footer {
     background-color: #1a1a1a; /* Background color */
     padding: 15px;
     text-align: center;
-    color: #999999;
+    color: white;
     position: absolute; /* Ensure it's placed correctly */
     width: 100%;
     bottom: 0;

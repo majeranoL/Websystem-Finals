@@ -18,6 +18,17 @@
 <div class="registration-container">
     <div class="form-card">
         <h2 class="bg-primary text-white">Login</h2>
+        <?php if (isset($messageSucc)) { ?>
+            <div class="alert alert-success">
+                <strong><?php echo $messageSucc; ?></strong>
+            </div>
+        <?php } ?>
+
+        <?php if (isset($messageErr)) { ?>
+            <div class="alert alert-danger">
+                <strong><?php echo $messageErr; ?></strong>
+            </div>
+        <?php } ?>
         <form action="app/auth/Login.php" method="POST"> 
             <input type="text" class="form-control" name="username"  placeholder="Username" required>
             <input type="password" class="form-control" name="password" placeholder="Password" required>

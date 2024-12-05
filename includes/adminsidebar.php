@@ -1,57 +1,73 @@
 <div class="sidebar">
         <!-- Logo Section -->
         <div class="sidebar-logo">
-            <h2>Logo</h2>
+            <h2>Admin</h2>
         </div>
-
+        <div class="border"></div>
+        <br>
         <!-- Navigation Links -->
         <div class="sidebar-section">
             <a href="#" class="sidebar-link active">
-                <i class="icon">🏠</i> Home
+                <i class="icon">🏠</i> Overview
             </a>
             <a href="#" class="sidebar-link">
-                <i class="icon">🔥</i> Popular
+                <i class="icon">🔥</i> Manage Post 
             </a>
+            <a href="#" class="sidebar-link">
+                <i class="icon">🔥</i> Manage User
+            </a>
+            <a href="#" class="sidebar-link">
+                <i class="icon">🔥</i> Settings 
+            </a>
+            <a href="#" class="sidebar-link">
+                <i class="icon">🔥</i> Logout
+            </a>
+        </div>  
+    <!-- Footer -->
+
+    <footer>
+    <div class="footer-content">
+        <p>&copy; 2024 Blogging System. All rights reserved.</p>
         </div>
-
-        <!-- Topics Section -->
-        <div class="sidebar-section">
-            <h3>Categories</h3>
-            <ul>
-
-                <li><a href="#"><i class="icon">💻</i> Technology</a></li>
-                <li><a href="#"><i class="icon">🌟</i> Lifestyle</a></li>
-                <li><a href="#"><i class="icon">🎬</i> Travel</a></li>
-            </ul>
-        </div>
-
-       
-        <!-- <div class="sidebar-section">
-            <h3>Resources</h3>
-            <ul>
-                <li><a href="#"><i class="icon">📄</i> About Reddit</a></li>
-                <li><a href="#"><i class="icon">📢</i> Advertise</a></li>
-                <li><a href="#"><i class="icon">❓</i> Help</a></li>
-                <li><a href="#"><i class="icon">✍️</i> Blog</a></li>
-                <li><a href="#"><i class="icon">💼</i> Careers</a></li>
-                <li><a href="#"><i class="icon">🖋️</i> Press</a></li>
-            </ul>
-        </div>  -->
-
-        <?php require_once("includes/footer.php"); ?>
+    </footer>
+    </body>
+    </html>
     </div>
 
-    
 
     <style>
+
+        /* Footer */
+footer {
+    background-color: #121212; /* Background color */
+    padding: 15px;
+    text-align: center;
+    color: white;
+    position: absolute; /* Ensure it's placed correctly */
+    width: 100%;
+    bottom: 0;
+    border-top: 1px solid #999999; /* Outline above the footer */
+}
+
+footer .footer-content {
+    font-size: 14px;
+}
+
+    .border{
+        border-top: 1px solid #999999;
+    }
 
 
 /* Sidebar */
 .sidebar {
-    background-color: #1a1a1a; /* Distinct dark blue-gray background for the sidebar */
-    height: 95%; /* Ensure it fits below the navbar */
+    background-color: #121212; /* Distinct dark blue-gray background for the sidebar */
+    height: 101%; /* Ensure it fits below the navbar */
     overflow-y: auto;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    box-sizing: border-box;
     position: fixed;
+     box-shadow: 3px 0 5px rgba(0, 0, 0, 0.3); /*Horizontal shadow on the right */
+    margin-left: -15px;
     margin-top: -15px; /* Align with the height of the navbar */
     width: 250px; /* Set a specific width for the sidebar */
     color: #ffffff; /* Text color for contrast */

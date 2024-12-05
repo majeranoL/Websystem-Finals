@@ -1,32 +1,52 @@
 <?php
 session_start();
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/Admin.css">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <!-- Include Sidebar -->
+    <?php include("includes/adminsidebar.php"); ?> 
 
-<?php include('includes/navbar.php'); ?>
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Admin Panel Card -->
+        <div class="admin-panel-card">
+            <h1>Admin Panel</h1>
+        </div>
 
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="Styles/Buttons.css">
-<div class="main-container">
-<?php include('includes/sidebar.php'); ?>
-    <!-- Content Section -->
-    <div class="content">
-        <div class="feed">
-            <div class="post">
-                <div class="post-title">WELCOME TO ADMIN DASHBOARD</div>
-                <div class="post-content">
-                    ADMIN
-                    <a href="#" class="text-primary">Read More</a>
+        <!-- Dashboard Overview Section -->
+        <div class="dashboard-overview">
+            <h2>Dashboard Overview</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Total Posts</h3>
+                    <p>45</p>
                 </div>
-                <div class="post-meta">Posted by <strong>[user]</strong> on [date]</div>
-                <div class="vote-buttons">
-                    <button class="upvote">▲</button>
-                    <span>25</span>
-                    <button class="downvote">▼</button>
+                <div class="card">
+                    <h3>Total Users</h3>
+                    <p>128</p>
+                </div>
+                <div class="card">
+                    <h3>Pending Approvals</h3>
+                    <p>12</p>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Create Post Button -->
-    <a href="add_post.php" class="create-post-btn">+</a>
-</div>
+        <!-- Recent Activity Section -->
+        <div class="recent-activity">
+            <h2>Recent Activity</h2>
+            <div class="card">
+                <h3>Post Moderation</h3>
+                <p>You have 5 flagged posts to review.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

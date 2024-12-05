@@ -3,7 +3,7 @@ session_start();
 ?>
 
 <?php include('includes/navbar.php'); ?>
-<link rel="stylesheet" href="Styles/Index&admin&user.css">
+<link rel="stylesheet" href="Styles/index.css">
 <link rel="stylesheet" href="Styles/Buttons.css">
 <link rel="stylesheet" href="Styles/modal.css">
 <div class="main-container">
