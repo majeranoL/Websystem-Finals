@@ -48,7 +48,7 @@
 
 /* Sidebar */
 .sidebar {
-    background-color: #1a1a1a; /* Distinct dark blue-gray background for the sidebar */
+    background-color: #121212; /* Distinct dark blue-gray background for the sidebar */
     height: 95%; /* Ensure it fits below the navbar */
     overflow-y: auto;
     position: fixed;

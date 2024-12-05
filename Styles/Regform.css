@@ -1,7 +1,7 @@
 /* Registration Page */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #121212;
+    background-color: #1a1a1a;
     color: #e0e0e0;
     overflow-x: hidden;
 }
@@ -11,7 +11,7 @@ body.registration-page {
     justify-content: center;
     align-items: center;
     height: 100vh; /* Full viewport height */
-    background-color: #121212;
+    background-color: #1a1a1a;
 }
 
 .registration-container {
@@ -66,7 +66,7 @@ body.registration-page {
 .btn-register {
     width: 100%;
     padding: 16px;
-    background-color: #3b82f6;
+    background-color: #f6ca3b;
     color: white;
     border: none;
     margin-bottom: 20px;

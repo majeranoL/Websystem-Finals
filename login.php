@@ -1,43 +1,17 @@
-<?php 
-    session_start();
-    require_once($_SERVER["DOCUMENT_ROOT"]."/app/config/Directories.php");
+<link rel="stylesheet" href="Styles/login.css">
 
-    if (isset($_SESSION["error"])) {
-        $messageErr = $_SESSION["error"];
-        unset($_SESSION["error"]);
-    }
-
-    if (isset($_SESSION["success"])) {
-        $messageSucc = $_SESSION["success"];
-        unset($_SESSION["success"]);
-    }
-?>
-<link rel="stylesheet" href="Styles/Regform.css">
-
-<body class="registration-page">
-<div class="registration-container">
-    <div class="form-card">
-        <h2 class="bg-primary text-white">Login</h2>
-        <?php if (isset($messageSucc)) { ?>
-            <div class="alert alert-success">
-                <strong><?php echo $messageSucc; ?></strong>
-            </div>
-        <?php } ?>
-
-        <?php if (isset($messageErr)) { ?>
-            <div class="alert alert-danger">
-                <strong><?php echo $messageErr; ?></strong>
-            </div>
-        <?php } ?>
-        <form action="app/auth/Login.php" method="POST"> 
-            <input type="text" class="form-control" name="username"  placeholder="Username" required>
-            <input type="password" class="form-control" name="password" placeholder="Password" required>
-            <button type="submit" class="btn-register">Login</button>
+<body class="login-page">
+    <div class="login wrap">
+        <div class="h1">Login</div>
+        <form action="app/auth/Login.php" method="POST">
+        <input placeholder="Username" id="Username" name="username" type="text" required>
+        <input placeholder="Password" id="password" name="password" type="password" required>
+            <input value="Login" class="btn" type="submit">
         </form>
-        <a href="Registration.php">No Account yet? Sign up here</a>
+        <br>
+        <div class="registration-link">
+            <a href="registration.php">Don't have an account? Register here</a>
+        </div>
     </div>
-</div>
 </body>
-
-
-<?php require_once(ROOT_DIR . "includes/footer.php"); ?>
+<?php include("includes/footer.php")?>

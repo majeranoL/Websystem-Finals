@@ -7,21 +7,11 @@
         <br>
         <!-- Navigation Links -->
         <div class="sidebar-section">
-            <a href="#" class="sidebar-link active">
-                <i class="icon">🏠</i> Overview
-            </a>
-            <a href="#" class="sidebar-link">
-                <i class="icon">🔥</i> Manage Post 
-            </a>
-            <a href="#" class="sidebar-link">
-                <i class="icon">🔥</i> Manage User
-            </a>
-            <a href="#" class="sidebar-link">
-                <i class="icon">🔥</i> Settings 
-            </a>
-            <a href="#" class="sidebar-link">
-                <i class="icon">🔥</i> Logout
-            </a>
+            <a href="#" class="sidebar-link active">Overview</a>
+            <a href="#" class="sidebar-link" > Manage Post </a>
+            <a href="#" class="sidebar-link"> Manage User </a>
+            <a href="#" class="sidebar-link"> Settings </a>
+            <a href="#" class="sidebar-link"> Logout </a> 
         </div>  
     <!-- Footer -->
 
@@ -39,14 +29,14 @@
 
         /* Footer */
 footer {
-    background-color: #121212; /* Background color */
+    background-color: #121212;
     padding: 15px;
     text-align: center;
     color: white;
-    position: absolute; /* Ensure it's placed correctly */
+    position: absolute; 
     width: 100%;
     bottom: 0;
-    border-top: 1px solid #999999; /* Outline above the footer */
+    border-top: 1px solid #999999;
 }
 
 footer .footer-content {
@@ -60,45 +50,43 @@ footer .footer-content {
 
 /* Sidebar */
 .sidebar {
-    background-color: #121212; /* Distinct dark blue-gray background for the sidebar */
-    height: 101%; /* Ensure it fits below the navbar */
+    background-color: #121212; 
+    height: 100vh; 
     overflow-y: auto;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden; 
     box-sizing: border-box;
     position: fixed;
-     box-shadow: 3px 0 5px rgba(0, 0, 0, 0.3); /*Horizontal shadow on the right */
+    box-shadow: 3px 0 5px rgba(0, 0, 0, 0.3); 
     margin-left: -15px;
-    margin-top: -15px; /* Align with the height of the navbar */
-    width: 250px; /* Set a specific width for the sidebar */
-    color: #ffffff; /* Text color for contrast */
-    animation: slideIn 0.5s ease-out; /* Applying slideIn animation */
+    margin-top: -15px;
+    width: 250px; 
+    color: #ffffff; 
+    animation: slideIn 0.5s ease-out; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    padding-top: 30px; 
 }
 
 /* Sidebar Logo */
 .sidebar-logo h2 {
     color: #00bfff;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    padding-left: 50px;
+    margin-bottom: 30px;
+    text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
-    animation: fadeIn 0.6s ease-in-out; /* Fade in animation for the logo */
+    animation: fadeIn 0.6s ease-in-out; 
 }
 
 /* Sidebar sections */
 .sidebar-section {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 0;
+    padding-right: 0;
     margin-bottom: 30px;
-    animation: fadeInUp 0.7s ease-in-out; /* Fade in and move up animation for each section */
-}
-
-.sidebar-section h3 {
-    font-size: 1rem;
-    color: #ccc;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInUp 0.7s ease-in-out;
 }
 
 /* Sidebar links */
@@ -106,31 +94,32 @@ footer .footer-content {
 .sidebar-section ul li a {
     display: flex;
     align-items: center;
+    justify-content: center;
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    padding: 10px;
+    padding: 12px 20px; 
     border-radius: 8px;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, padding 0.2s; 
     font-size: 1rem;
-    animation: fadeInUp 0.8s ease-in-out; /* Fade in and move up animation for links */
-}
-
-.sidebar-link .icon,
-.sidebar-section ul li a .icon {
-    margin-right: 10px;
-    font-size: 1.2rem;
+    margin-bottom: 10px;
+    animation: fadeInUp 0.8s ease-in-out; 
+    width: 100%; 
 }
 
 .sidebar-link.active,
 .sidebar-link:hover,
 .sidebar-section ul li a:hover {
     background-color: #333333;
+    padding-left: 20px; 
+    padding-right: 20px; 
+    border-radius: 8px; 
 }
 
 /* Sidebar list items */
 .sidebar-section ul {
     list-style: none;
     padding: 0;
+    width: 100%;
 }
 
 .sidebar-section ul li {
@@ -146,6 +135,8 @@ footer .footer-content {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
 }
+
+
 
 /* Animations */
 @keyframes fadeIn {

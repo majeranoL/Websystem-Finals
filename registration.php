@@ -12,9 +12,9 @@
     }
 ?>
 
-<link rel="stylesheet" href="Styles/Regform.css">
+<link rel="stylesheet" href="Styles/login.css">
 <body class="registration-page">
-<div class="registration-container">
+<div class="login">
     <div class="form-card">
         <h2 class="bg-primary text-white">Create an Account</h2>
    
@@ -36,9 +36,12 @@
             <input type="text" class="form-control" name="username" placeholder="Username" required>
             <input type="password" class="form-control" name="password" placeholder="Password" required>
             <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password" required>
-            <button type="submit" class="btn-register">Sign Up</button>
+            <input value="Register" type="submit" class="btn"></input>
         </form>
-        <a href="login.php" class="login-link">Already have an account? Log in</a>
+        
+        <div class="registration-link">
+            <a href="login.php">Already have an account? Login here</a>
+        </div>
     </div>
 </div>
 </body>
