@@ -3,9 +3,18 @@ session_start();
 ?>
 
 <?php include('includes/navbar.php'); ?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title> <!-- This sets the title of the webpage displayed in the browser tab -->
+</head>
+
+
 <link rel="stylesheet" href="Styles/index.css">
 <link rel="stylesheet" href="Styles/Buttons.css">
 <link rel="stylesheet" href="Styles/modal.css">
+
+<body>
 <div class="main-container">
     <?php include('includes/sidebar.php'); ?>
     <!-- Content Section -->
@@ -34,8 +43,8 @@ session_start();
 <div id="chatContainer" style="position: fixed; bottom: -20px; right: 80px; max-width: 300px; z-index: 1050;">
     <!-- Chat windows will dynamically appear here -->
 </div>
-
 </div>
+</body>
 
 <!-- Modal -->
 <div class="modal" id="postModal">

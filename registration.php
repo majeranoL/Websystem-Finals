@@ -11,8 +11,13 @@
         unset($_SESSION["success"]);
     }
 ?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title> 
+</head>
 
-<link rel="stylesheet" href="Styles/login.css">
+<link rel="stylesheet" href="Styles/registration.css">
 <body class="registration-page">
 <div class="login">
     <div class="form-card">

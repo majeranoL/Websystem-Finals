@@ -5,6 +5,12 @@ session_start();
 session_unset(); 
 session_destroy();
 ?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title> <!-- This sets the title of the webpage displayed in the browser tab -->
+</head>
+
 <body style="background-color: #1a1a1a; color: #ffffff;">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <div class="container vh-100 d-flex justify-content-center align-items-center">

@@ -1,10 +1,15 @@
 <?php
 session_start();
 ?>
-
 <?php   
     include('includes/navbar.php');  
 ?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogging System</title> <!-- This sets the title of the webpage displayed in the browser tab -->
+</head>
+
 <link rel="stylesheet" href="Styles/Buttons.css">
 <div class="main-container">
     

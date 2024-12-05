@@ -11,7 +11,7 @@
             <a href="#" class="sidebar-link" > Manage Post </a>
             <a href="#" class="sidebar-link"> Manage User </a>
             <a href="#" class="sidebar-link"> Settings </a>
-            <a href="#" class="sidebar-link"> Logout </a> 
+            <a href="Logout.php" class="sidebar-link"> Logout </a> 
         </div>  
     <!-- Footer -->
 

@@ -38,24 +38,49 @@
             </ul>
         </div>  -->
 
-        <?php require_once("includes/footer.php"); ?>
+        <footer>
+    <div class="footer-content">
+        <p>&copy; 2024 Blogging System. All rights reserved.</p>
+    </div>
+    </footer>
+    </body>
+    </html>
     </div>
 
     
 
     <style>
 
+footer {
+    background-color: #121212; 
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    border-top: 1px solid #999999;
+    position: absolute; 
+    bottom: 0; 
+    left: 0;
+}
+
+
+
+footer .footer-content {
+    font-size: 14px;
+}
+
 
 /* Sidebar */
 .sidebar {
-    background-color: #121212; /* Distinct dark blue-gray background for the sidebar */
-    height: 95%; /* Ensure it fits below the navbar */
+    background-color: #121212; 
+    height: 95%; 
     overflow-y: auto;
     position: fixed;
-    margin-top: -15px; /* Align with the height of the navbar */
-    width: 250px; /* Set a specific width for the sidebar */
-    color: #ffffff; /* Text color for contrast */
-    animation: slideIn 0.5s ease-out; /* Applying slideIn animation */
+    margin-top: -15px; 
+    width: 250px; 
+    color: #ffffff; 
+    animation: slideIn 0.5s ease-out; 
+    box-shadow: 3px 0 5px rgba(0, 0, 0, 0.3); 
 }
 
 /* Sidebar Logo */
@@ -66,7 +91,7 @@
     padding-left: 50px;
     font-size: 1.5rem;
     font-weight: bold;
-    animation: fadeIn 0.6s ease-in-out; /* Fade in animation for the logo */
+    animation: fadeIn 0.6s ease-in-out; 
 }
 
 /* Sidebar sections */
@@ -74,7 +99,7 @@
     padding-left: 30px;
     padding-right: 30px;
     margin-bottom: 30px;
-    animation: fadeInUp 0.7s ease-in-out; /* Fade in and move up animation for each section */
+    animation: fadeInUp 0.7s ease-in-out; 
 }
 
 .sidebar-section h3 {
@@ -96,7 +121,7 @@
     border-radius: 8px;
     transition: background-color 0.2s;
     font-size: 1rem;
-    animation: fadeInUp 0.8s ease-in-out; /* Fade in and move up animation for links */
+    animation: fadeInUp 0.8s ease-in-out; 
 }
 
 .sidebar-link .icon,
