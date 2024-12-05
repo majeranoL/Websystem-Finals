@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 // Incorrect password handling
                 $_SESSION["error"] = "Incorrect Password";
-                header("Location: " . BASE_URL . "login.php");
+                header("Location: ". BASE_URL . "login.php");
                 exit;
             }
         } else {

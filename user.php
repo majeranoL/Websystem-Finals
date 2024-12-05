@@ -37,7 +37,7 @@ session_start();
     </div>
 
 <!-- Create Post Button -->
-<button class="create-post-btn" onclick="openModal()" style="position: fixed; bottom: 10px; right: 10px; z-index: 1000;">+</button>
+<button class="create-post-btn" onclick="openModal()" style="position: fixed; bottom: 30px; right: px; z-index: 1000;">+</button>
 
 <!-- Chat Container (Positioned beside the button) -->
 <div id="chatContainer" style="position: fixed; bottom: -20px; right: 80px; max-width: 300px; z-index: 1050;">

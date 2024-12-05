@@ -40,7 +40,6 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current page name
 
 
 
-
             <div class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Messages
