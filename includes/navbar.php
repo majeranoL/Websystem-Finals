@@ -40,19 +40,19 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current page name
 
 
 
-            <div class="nav-item dropdown">
+            <!-- <div class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Messages
             </a>
             <ul class="dropdown-menu dropdown-menu-end"  aria-labelledby="messagesDropdown"
             style="background-color: #1a1a1a; border: none;" id="messagesList">
-                <!-- Sample messages; replace with dynamic content later -->
-                <li><a class="dropdown-item" href="#" style="color: rgba(255, 255, 255, 0.9); padding: 10px 20px; background-color: #1a1a1a;"
+                Sample messages; replace with dynamic content later -->
+                <!--<li><a class="dropdown-item" href="#" style="color: rgba(255, 255, 255, 0.9); padding: 10px 20px; background-color: #1a1a1a;"
                 onclick="openChat('John Doe')">John Doe</a></li>
                 <li><a class="dropdown-item" href="#"
                 style="color: rgba(255, 255, 255, 0.9); padding: 10px 20px; background-color: #1a1a1a;" onclick="openChat('Jane Smith')">Jane Smith</a></li>
             </ul>
-            </div>
+            </div> -->
 
 
 
