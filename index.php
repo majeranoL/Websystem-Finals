@@ -11,6 +11,8 @@ session_start();
 </head>
 
 <link rel="stylesheet" href="Styles/Buttons.css">
+<link rel="stylesheet" href="Styles/modal.css">
+<body>
 <div class="main-container">
     
     <?php include('includes/sidebar.php'); ?>
@@ -34,5 +36,8 @@ session_start();
     </div>
 
     <!-- Create Post Button -->
+    <button class="create-post-btn" onclick="openModal()" style="position: fixed; bottom: 30px; right: 30px; z-index: 1000;">+</button>
     <!-- <a href="login.php" class="create-post-btn">+</a> -->
 </div>
+<?php include('modal/addpost.php'); ?>
+</body>

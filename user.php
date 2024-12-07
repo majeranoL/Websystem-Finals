@@ -40,5 +40,5 @@ session_start();
 <button class="create-post-btn" onclick="openModal()" style="position: fixed; bottom: 30px; right: 30px; z-index: 1000;">+</button>
 
 </div>
-<?php include('addpost_modal.php'); ?>
+<?php include('modal/addpost.php'); ?>
 </body>
