@@ -1,58 +1,58 @@
 <!-- Modal Structure for Creating a Post -->
-<div class="modal" id="postModal" style="display: none;">
+<div class="modal" id="addPostModal" style="display: none;">
     <div class="modal-content">
         <div class="modal-header">
             <span>Create a Post</span>
-            <button class="modal-close" onclick="closeModal()">×</button>
+            <button class="modal-close" onclick="closeAddPostModal()">×</button>
         </div>
         <form method="POST" action="app/posts/add_post.php" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="postTitle">Post Title</label>
-                <input type="text" id="postTitle" name="title" placeholder="Enter your title" required>
+                <label for="addPostTitle">Post Title</label>
+                <input type="text" id="addPostTitle" name="title" placeholder="Enter your title" required>
             </div>
             <div class="form-group">
-                <label for="postDescription">Description</label>
-                <textarea id="postDescription" name="content" rows="4" placeholder="Write your description" required></textarea>
+                <label for="addPostDescription">Description</label>
+                <textarea id="addPostDescription" name="content" rows="4" placeholder="Write your description" required></textarea>
             </div>
             <div class="form-group">
-                <label for="postImage">Image</label>
-                <input type="file" id="postImage" name="image_url" accept="image/*">
+                <label for="addPostImage">Image</label>
+                <input type="file" id="addPostImage" name="image_url" accept="image/*">
             </div>
             <div class="form-group">
-                <label for="postCategory">Category</label>
-                <select id="postCategory" name="Category">
+                <label for="addPostCategory">Category</label>
+                <select id="addPostCategory" name="category">
                     <option value="Technology">Technology</option>
                     <option value="Lifestyle">Lifestyle</option>
                     <option value="Travel">Travel</option>
                 </select>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-cancel" onclick="closeModal()">Cancel</button>
+                <button type="button" class="btn btn-cancel" onclick="closeAddPostModal()">Cancel</button>
                 <button type="submit" class="btn btn-submit">Post</button>
             </div>
         </form>
     </div>
 </div>
 
-<!-- Script to open and close the modal -->
+<!-- Script to open and close the "Add Post" modal -->
 <script>
-    // Open modal function
-    function openModal() {
-        const modal = document.getElementById("postModal");
+    // Open the Add Post Modal
+    function openAddPostModal() {
+        const modal = document.getElementById("addPostModal");
         modal.style.display = "flex";
     }
 
-    // Close modal function
-    function closeModal() {
-        const modal = document.getElementById("postModal");
+    // Close the Add Post Modal
+    function closeAddPostModal() {
+        const modal = document.getElementById("addPostModal");
         modal.style.display = "none";
     }
 
     // Close modal when clicking outside the modal content
     window.onclick = function(event) {
-        const modal = document.getElementById("postModal");
+        const modal = document.getElementById("addPostModal");
         if (event.target === modal) {
-            closeModal();
+            closeAddPostModal();
         }
     };
 </script>
