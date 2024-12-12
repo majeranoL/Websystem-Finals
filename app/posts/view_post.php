@@ -1,5 +1,6 @@
 <?php
 session_start();
+include($_SERVER["DOCUMENT_ROOT"] . "/includes/navbar.php"); 
 require_once($_SERVER["DOCUMENT_ROOT"]."/app/config/DatabaseConnect.php");
 
 // Initialize the database connection
@@ -100,93 +101,201 @@ if (isset($_GET['delete_comment_id']) && isset($_SESSION['user_id'])) {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Post</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/Styles/index.css">
-    <link rel="stylesheet" href="/Styles/Buttons.css">
-    <link rel="stylesheet" href="/Styles/modal.css">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <script>
-        // Function to ask for confirmation before deleting a comment
-        function confirmDelete(event) {
-            if (!confirm("Are you sure you want to delete this comment?")) {
-                event.preventDefault();
-            }
+    <style>
+        body {
+            background-color: #1a1a1a !important;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding-top: 70px; /* Add padding to avoid navbar overlap */
         }
-    </script>
+
+        .post-container {
+            background: #1e2a3a;
+            border: 1px solid black;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto; /* Center the container */
+            width: 80%; /* Adjust width as needed */
+            max-width: 900px; /* Set max width for larger screens */
+            color: white;
+            text-align: center; /* Center-align the text */
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .post-category {
+            font-size: 14px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .post-container img {
+            max-width: 100%; /* Make the image responsive */
+            height: auto;
+            display: block; /* Ensure it's treated as a block element */
+            margin: 20px auto; /* Center the image */
+            border-radius: 8px; /* Add rounded corners */
+        }
+
+        .comments-section {
+            margin-top: 30px;
+            color: white;
+        }
+
+        .comment {
+            background: #2c3e50;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .comment strong {
+            color: white;
+        }
+
+        .add-comment textarea {
+            width: 100%;
+            background-color: #2c3e50;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 10px;
+            color: white;
+        }
+
+        .add-comment button {
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
-<body>
 
-<?php include($_SERVER["DOCUMENT_ROOT"] . "/includes/navbar.php"); ?>
 <?php include($_SERVER["DOCUMENT_ROOT"] . "/includes/sidebar.php"); ?>
+<body>
+<div class="container mt-4">
+    <div class="post-container">
+    <?php if ($post) { ?>
+        <!-- Title Section -->
+        <div class="post-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h1 class="h3 mb-0" style="color: white; text-align: left; flex: 1;">
+                <strong><?php echo htmlspecialchars($post['title']); ?></strong>
+            </h1>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-9">
-            <div class="post-container">
-                <?php if ($post) { ?>
-                    <h1><?php echo htmlspecialchars($post['title']); ?></h1>
-                    <p><strong>Category:</strong> <?php echo htmlspecialchars($post['category']); ?></p>
-                    <p><?php echo nl2br(htmlspecialchars($post['content'])); ?></p>
-                    <?php if (!empty($post['image_url'])) { ?>
-                        <img src="<?php echo htmlspecialchars($post['image_url']); ?>" alt="Post Image" style="max-width: 100%; height: auto;">
-                    <?php } ?>
-                    <p><strong>Posted by:</strong> <?php echo htmlspecialchars($post['username']); ?> on <?php echo date('F j, Y', strtotime($post['created_at'])); ?></p>
-                <?php } else { ?>
-                    <p>Post not found.</p>
-                <?php } ?>
-
-                <!-- Comments Section -->
-                <div class="comments-section">
-                    <h2>Comments</h2>
-                    <?php if ($comments) { ?>
-                        <?php foreach ($comments as $comment) { ?>
-                            <div class="comment">
-                                <p><strong><?php echo htmlspecialchars($comment['username']); ?>:</strong></p>
-                                <p><?php echo nl2br(htmlspecialchars($comment['comment'])); ?></p>
-                                <p><em><?php echo date('F j, Y, g:i a', strtotime($comment['created_at'])); ?></em></p>
-                                <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $comment['comment_user_id']) { ?>
-                                    <!-- Edit and Delete buttons for the comment owner -->
-                                    <a href="view_post.php?post_id=<?php echo $postId; ?>&edit_comment_id=<?php echo $comment['comment_id']; ?>">Edit</a>
-                                    <a href="view_post.php?post_id=<?php echo $postId; ?>&delete_comment_id=<?php echo $comment['comment_id']; ?>" 
-                                       onclick="confirmDelete(event)">Delete</a>
-                                <?php } ?>
-                            </div>
-                        <?php } ?>
-                    <?php } else { ?>
-                        <p>No comments yet. Be the first to comment!</p>
-                    <?php } ?>
-
-                    <!-- Add Comment Form -->
-                    <form method="POST" action="">
-                        <textarea name="comment" rows="5" cols="50" placeholder="Write a comment..." required></textarea>
-                        <button type="submit">Add Comment</button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Edit Comment Form (if editing a comment) -->
-            <?php if (isset($commentToEdit)) { ?>
-                <div class="edit-comment-form">
-                    <h3>Edit Comment</h3>
-                    <form method="POST" action="">
-                        <textarea name="edited_comment" rows="5" cols="50" required><?php echo htmlspecialchars($commentToEdit['comment']); ?></textarea>
-                        <button type="submit">Save Changes</button>
-                    </form>
-                </div>
-            <?php } ?>
+            <!-- Category on the far right -->
+            <span class="post-category" 
+                style=" 
+                    <?php 
+                        if ($post['category'] === 'Technology') {
+                            echo 'background-color: #fff3cd; color: #856404;';
+                        } elseif ($post['category'] === 'Lifestyle') {
+                            echo 'background-color: #d4edda; color: #155724;';
+                        } elseif ($post['category'] === 'Travel') {
+                            echo 'background-color: #d1ecf1; color: #0c5460;';
+                        } else {
+                            echo 'background-color: #e2e3e5; color: #383d41;';
+                        }
+                    ?>">
+                <?php echo htmlspecialchars($post['category']); ?>
+            </span>
         </div>
+
+        <!-- Content Section -->
+        <p style="color: white; text-align: left; margin-bottom: 20px;">
+            <?php echo nl2br(htmlspecialchars($post['content'])); ?>
+        </p>
+        
+        <!-- Image Section (if available) -->
+        <?php if (!empty($post['image_url'])) { ?>
+            <img src="<?php echo htmlspecialchars($post['image_url']); ?>" alt="Post Image" class="img-fluid rounded" style="margin-bottom: 20px;">
+        <?php } ?>
+
+        <!-- Posted By Section (Small Text) -->
+        <p class="text-white" style="color: white; text-align: left; font-size: small;">
+            Posted by
+            <strong style="color: black;"><?php echo htmlspecialchars($post['username']); ?></strong>
+            on <?php echo date('F j, Y', strtotime($post['created_at'])); ?>
+        </p>
+
+    <?php } else { ?>
+        <p>Post not found.</p>
+    <?php } ?>
+</div>
+
+
+<div class="comments-section">
+    <h2 style="color: white;">Comments</h2>
+    <?php if ($comments) { ?>
+        <?php foreach ($comments as $comment) { ?>
+            <div class="comment">
+                <p><strong><?php echo htmlspecialchars($comment['username']); ?>:</strong></p>
+                <p><?php echo nl2br(htmlspecialchars($comment['comment'])); ?></p>
+                <p class="text-muted"><small style="color: white;"> <?php echo date('F j, Y, g:i a', strtotime($comment['created_at'])); ?></small></p>
+
+                <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $comment['comment_user_id']) { ?>
+                    <!-- Edit and Delete buttons -->
+                    <a href="view_post.php?post_id=<?php echo $postId; ?>&edit_comment_id=<?php echo $comment['comment_id']; ?>" class="btn btn-sm btn-primary">Edit</a>
+                    <a href="view_post.php?post_id=<?php echo $postId; ?>&delete_comment_id=<?php echo $comment['comment_id']; ?>" class="btn btn-sm btn-danger" onclick="confirmDelete(event)">Delete</a>
+                <?php } ?>
+            </div>
+        <?php } ?>
+    <?php } else { ?>
+        <p>No comments yet. Be the first to comment!</p>
+    <?php } ?>
+
+    <!-- Add/Edit comment form -->
+    <div class="add-comment">
+        <?php if (isset($_GET['edit_comment_id'])) { 
+            $edit_comment_id = $_GET['edit_comment_id'];
+            $editQuery = "SELECT comment FROM comments WHERE comment_id = :comment_id";
+            $editStmt = $conn->prepare($editQuery);
+            $editStmt->bindParam(':comment_id', $edit_comment_id, PDO::PARAM_INT);
+            $editStmt->execute();
+            $editComment = $editStmt->fetch();
+        ?>
+            <form method="POST" action="">
+                <textarea name="edited_comment" rows="4" placeholder="Edit your comment..." required><?php echo htmlspecialchars($editComment['comment']); ?></textarea>
+                <button type="submit">Update Comment</button>
+            </form>
+        <?php } else { ?>
+            <!-- Add new comment form -->
+            <form method="POST" action="">
+                <textarea name="comment" rows="4" placeholder="Write a comment..." required></textarea>
+                <button type="submit">Add Comment</button>
+            </form>
+        <?php } ?>
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</div>
 
+<script>
+    function confirmDelete(event) {
+        if (!confirm("Are you sure you want to delete this comment?")) {
+            event.preventDefault();
+        }
+    }
+</script>
 </body>
 </html>
+
+

@@ -40,10 +40,10 @@ $conn = $db->connectDB();
 
     /* Style for the category */
     .post-category {
-        font-size: 1.2em;
-        margin-top: 10px;
-        font-weight: normal;
-        color: inherit;
+            font-size: 1em;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
     }
 
     /* Style for the post content */
@@ -113,8 +113,8 @@ $conn = $db->connectDB();
                                 </div>
                             <?php endif; ?>
                                 <!-- Post Category -->
-                                <div class="post-category">
-                                    <strong>Category:</strong> <?php echo htmlspecialchars($post['category']); ?>
+                                <div class="post-category" hidden>
+                                    <?php echo htmlspecialchars($post['category']); ?>
                                 </div>
 
                                 <!-- Post Content -->

@@ -25,25 +25,11 @@ $isLoggedIn = isset($_SESSION['user_id']); // Assuming you store the user's ID i
         <div class="sidebar-section">
             <h3>Categories</h3>
             <ul>
-
-                <li><a href="index.php?category=Technology"><i class="icon">💻</i> Technology</a></li>
-                <li><a href="index.php?category=Lifestyle"><i class="icon">🌟</i> Lifestyle</a></li>
-                <li><a href="index.php?category=Travel"><i class="icon">🎬</i> Travel</a></li>
+                <li><a href="user.php?category=Technology"><i class="icon">💻</i> Technology</a></li>
+                <li><a href="user.php?category=Lifestyle"><i class="icon">🌟</i> Lifestyle</a></li>
+                <li><a href="user.php?category=Travel"><i class="icon">🎬</i> Travel</a></li>
             </ul>
         </div>
-
-       
-        <!-- <div class="sidebar-section">
-            <h3>Resources</h3>
-            <ul>
-                <li><a href="#"><i class="icon">📄</i> About Reddit</a></li>
-                <li><a href="#"><i class="icon">📢</i> Advertise</a></li>
-                <li><a href="#"><i class="icon">❓</i> Help</a></li>
-                <li><a href="#"><i class="icon">✍️</i> Blog</a></li>
-                <li><a href="#"><i class="icon">💼</i> Careers</a></li>
-                <li><a href="#"><i class="icon">🖋️</i> Press</a></li>
-            </ul>
-        </div>  -->
 
         <footer>
     <div class="footer-content">
@@ -80,7 +66,7 @@ footer .footer-content {
 /* Sidebar */
 .sidebar {
     background-color: #121212; 
-    height: 95%; 
+    height: 100%; 
     overflow-y: auto;
     position: fixed;
     margin-top: -15px; 
