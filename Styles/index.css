@@ -46,6 +46,7 @@ a {
     animation: fadeIn 1s ease-out 0.3s;
 }
 
+
 .menu a {
     color: #ecf0f1;
     font-size: 18px;
@@ -77,13 +78,20 @@ a {
     height: calc(100vh - 60px); /* Full viewport height minus the navbar height */
     margin-top: 60px; /* Same height as the navbar */
     padding-top: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 200px;
+}
+.feed {
+    width: 100%;
+    max-width: 1000px; /* Ensure posts don't stretch too wide */
 }
 
 /* Post */
 .post {
     background-color: #1e2a3a;
-    padding: 30px;
-    margin-bottom: 30px;
+    padding: 20px;
+    margin-bottom: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease;
@@ -93,7 +101,7 @@ a {
 /* .post:hover {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     animation: bounce 0.4s ease-out;
-} */
+}  */
 
 .post-header {
     display: flex;
@@ -213,6 +221,57 @@ a {
     pointer-events: none;
     z-index: 1;
   }
+  
+
+  .upvote.voted {
+    color: green;
+    }
+
+    .downvote.voted {
+        color: red;
+    }
+
+
+
+    /* Style for the post title */
+    .post-title a {
+        font-size: 2em; /* Largest font size for the title */
+        font-weight: bold;
+        color: inherit; /* Inherits color from the parent, so it respects your theme */
+    }
+
+    /* Style for the category */
+    .post-category {
+        font-size: 1.2em; /* Slightly smaller than the title */
+        margin-top: 10px;
+        font-weight: normal;
+        color: inherit; /* A subtle color for category */
+    }
+
+    /* Style for the post content */
+    .post-content {
+        font-size: .7em; /* A bit smaller than the category */
+        margin-top: 10px;
+        color: inherit; /* Slightly darker color for content */
+    }
+
+    /* Style for the vote buttons */
+    .vote-buttons {
+        font-size: 1em; /* Standard font size for the vote buttons */
+        margin-top: 10px;
+    }
+
+    /* Optional: Style the "Read More" link */
+    .text-primary {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .text-primary:hover {
+        text-decoration: underline;
+    }
+
+    
 
 /* Animations */
 @keyframes fadeIn {

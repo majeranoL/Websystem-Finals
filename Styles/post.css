@@ -1,0 +1,118 @@
+/* Style for the post title */
+.post-meta {
+    font-size: 0.85rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.post-dropdown {
+    position: relative;
+}
+
+/* Dropdown button */
+.post-dropdown-toggle {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    transition: fill 0.3s;
+}
+
+/* Dropdown menu */
+.post-dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 100%; 
+    background-color: #1a1a1a;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    width: auto; 
+    min-width: 120px;
+    z-index: 10;
+    padding: 0; 
+}
+
+
+.post-dropdown-menu .dropdown-item {
+    display: block; 
+    padding: 8px 12px;
+    text-decoration: none;
+    color: white;
+    font-size: 0.85rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover effect for dropdown items */
+.post-dropdown-menu .dropdown-item:hover {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+.post-dropdown-toggle::after {
+    display: none !important;
+}
+
+
+.post-dropdown-toggle {
+    padding-right: 0;
+}
+
+.post-meta strong {
+    font-weight: bold; 
+    color: #121212; 
+}
+
+.post-image img {
+    max-width: 100%; 
+    height: auto;    
+    display: block;  
+    margin-top: 20px; 
+}
+
+.post {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.post-title a {
+    font-size: 2em; 
+    font-weight: bold;
+    color: inherit;
+    margin-top: 5px;
+}
+
+
+.post-category {
+    font-size: 1.2em; 
+    margin-top: 10px;
+    font-weight: normal;
+    color: inherit; 
+}
+
+/* Style for the post content */
+.post-content {
+    font-size: .7em; /* A bit smaller than the category */
+    margin-top: 10px;
+    color: inherit; 
+}
+
+/* Style for the vote buttons */
+.vote-buttons {
+    font-size: 1em; /* Standard font size for the vote buttons */
+    margin-top: 10px;
+}
+
+/* Optional: Style the "Read More" link */
+.text-primary {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.text-primary:hover {
+    text-decoration: underline;
+}

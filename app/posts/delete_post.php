@@ -22,9 +22,9 @@ $conn = $db->connectDB();
 if ($conn) {
     // Validate ownership of the post
     $post_id = intval($_GET['post_id']);
-    $query = "SELECT * FROM posts WHERE post_id = :id AND user_id = :user_id";
+    $query = "SELECT * FROM posts WHERE post_id = :post_id AND user_id = :user_id";
     $stmt = $conn->prepare($query);
-    $stmt->bindParam(':id', $post_id, PDO::PARAM_INT);
+    $stmt->bindParam(':post_id', $post_id, PDO::PARAM_INT);
     $stmt->bindParam(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
     $stmt->execute();
 
@@ -37,9 +37,9 @@ if ($conn) {
     }
 
     // Delete the post
-    $deleteQuery = "DELETE FROM posts WHERE post_id = :id";
+    $deleteQuery = "DELETE FROM posts WHERE post_id = :post_id";
     $deleteStmt = $conn->prepare($deleteQuery);
-    $deleteStmt->bindParam(':id', $post_id, PDO::PARAM_INT);
+    $deleteStmt->bindParam(':post_id', $post_id, PDO::PARAM_INT);
 
     if ($deleteStmt->execute()) {
         $_SESSION['success'] = "Post deleted successfully.";

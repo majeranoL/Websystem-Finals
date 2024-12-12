@@ -3,20 +3,17 @@ session_start();
 require_once($_SERVER["DOCUMENT_ROOT"] . "/app/config/DatabaseConnect.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Ensure post_id is properly passed via POST
-    $post_id = isset($_POST['post_id']) ? $_POST['post_id'] : null;
-
-    // Check if the post_id exists and is valid
-    if (!$post_id) {
+    if (!isset($_GET['post_id']) || !is_numeric($_GET['post_id'])) {
         $_SESSION["error"] = "Invalid post ID.";
         header("Location: /user.php");
         exit;
     }
 
-    $title = isset($_POST["title"]) ? htmlspecialchars($_POST["title"]) : '';
-    $content = isset($_POST["content"]) ? htmlspecialchars($_POST["content"]) : '';
-    $category = isset($_POST["category"]) ? htmlspecialchars($_POST["category"]) : '';
-
+    $post_id = intval($_GET['post_id']);
+    $title = htmlspecialchars($_POST["title"]);
+    $content = htmlspecialchars($_POST["content"]);
+    $category = htmlspecialchars($_POST["category"]);
+    
     $imagePath = null;
 
     // Handle file upload if a new image is provided
@@ -44,14 +41,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($imagePath) {
             $query .= ', image_url = :image_url';
         }
-        $query .= ' WHERE post_id = :id AND user_id = :user_id';
+        $query .= ' WHERE post_id = :post_id AND user_id = :user_id';
 
         $stmt = $conn->prepare($query);
-        $stmt->bindParam(':id', $post_id);
+        $stmt->bindParam(':post_id', $post_id, PDO::PARAM_INT);
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':content', $content);
         $stmt->bindParam(':category', $category);
-        $stmt->bindParam(':user_id', $_SESSION['user_id']);
+        $stmt->bindParam(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
 
         if ($imagePath) {
             $stmt->bindParam(':image_url', $imagePath);
@@ -60,9 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
 
         $_SESSION["success"] = "Post updated successfully!";
-        header("Location: /user.php"); // Redirect after success
+        header("Location: /user.php");
         exit;
-
     } catch (Exception $e) {
         $_SESSION["error"] = "Error: " . $e->getMessage();
         header("Location: /user.php");

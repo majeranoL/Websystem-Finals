@@ -36,49 +36,26 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current page name
         <div class="menu">
             <?php if (isset($_SESSION['user_id'])): ?>
                 <!-- Show Home and Messages links if logged in -->
-                <a href="user.php" <?php echo $current_page == 'user.php' ? 'class="active"' : ''; ?>>Home</a>
-
-
-
-            <!-- <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Messages
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end"  aria-labelledby="messagesDropdown"
-            style="background-color: #1a1a1a; border: none;" id="messagesList">
-                Sample messages; replace with dynamic content later -->
-                <!--<li><a class="dropdown-item" href="#" style="color: rgba(255, 255, 255, 0.9); padding: 10px 20px; background-color: #1a1a1a;"
-                onclick="openChat('John Doe')">John Doe</a></li>
-                <li><a class="dropdown-item" href="#"
-                style="color: rgba(255, 255, 255, 0.9); padding: 10px 20px; background-color: #1a1a1a;" onclick="openChat('Jane Smith')">Jane Smith</a></li>
-            </ul>
-            </div> -->
-
-
-
+                <a href="/user.php" <?php echo $current_page == 'user.php' ? 'class="active"' : ''; ?>>Home</a>
 
                 <!-- notification -->
                 <a href="notification.php" <?php echo $current_page == 'notification.php' ? 'class=active': ''; ?>>Notifications</a>
                 
             <!-- Dropdown for user profile options -->
             <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> 
+                <a class="nav-link dropdown-toggle <?php echo $current_page == 'profile.php' ? 'active' : ''; ?>" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <?php echo htmlspecialchars($_SESSION['fullname']); ?>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="userDropdown" style="background-color: #1a1a1a; border: none;">
-                    <!-- Profile Link -->
                     <li><a class="dropdown-item" href="profile.php" style="color: rgba(255, 255, 255, 0.9); padding: 10px 20px; background-color: #1a1a1a;">Profile</a></li>
-                    <!-- Divider -->
                     <li><hr class="dropdown-divider" style="border-color: #333333;"></li>
-                    <!-- Logout Form -->
                     <li>
-                        <form action="Logout.php" method="POST">
+                        <form action="/logout.php" method="POST">
                             <button type="submit" class="dropdown-item" style="color: rgba(255, 255, 255, 0.9); padding: 10px 20px; background-color: #1a1a1a;">Logout</button>
                         </form>
                     </li>
                 </ul>
             </div>
-
             <?php else: ?>
                 <!-- Show login link if not logged in -->
                 <a href="login.php" <?php echo $current_page == 'login.php' ? 'class="active"' : ''; ?>>Login</a>
