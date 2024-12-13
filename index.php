@@ -9,10 +9,13 @@ $conn = $db->connectDB();
 
 
 ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blogging System</title>
+
+    <link rel="stylesheet" href="Styles/index.css">
 
     <style>
     /* Style for the post title */
@@ -70,13 +73,14 @@ $conn = $db->connectDB();
     }
 
     </style>
+    
 </head>
 
 <link rel="stylesheet" href="Styles/Buttons.css">
 <?php include('includes/sidebar.php'); ?>
 <div class="main-container">
-    
-    
+
+
     <!-- Content Section -->
     <div class="content">
         <div class="feed">
@@ -95,9 +99,9 @@ $conn = $db->connectDB();
 
                     if ($posts) {
                         foreach ($posts as $post) {
-                            ?>
+            ?>
                             <div class="post">
-                                
+
                                 <!-- Post Title -->
                                 <div class="post-title">
                                     <a href="login.php" style="text-decoration: none; color: inherit;">
@@ -106,12 +110,12 @@ $conn = $db->connectDB();
                                 </div>
                                 <!-- Post Image -->
                                 <?php if (!empty($post['image_url'])): ?>
-                                <div class="post-image">
-                                    <a href="login.php">
-                                        <img src="<?php echo htmlspecialchars($post['image_url']); ?>" alt="Post Image">
-                                    </a>
-                                </div>
-                            <?php endif; ?>
+                                    <div class="post-image">
+                                        <a href="login.php">
+                                            <img src="<?php echo htmlspecialchars($post['image_url']); ?>" alt="Post Image">
+                                        </a>
+                                    </div>
+                                <?php endif; ?>
                                 <!-- Post Category -->
                                 <div class="post-category" hidden>
                                     <?php echo htmlspecialchars($post['category']); ?>
@@ -125,7 +129,7 @@ $conn = $db->connectDB();
 
                                 <!-- Post Metadata -->
                                 <div class="post-meta">
-                                    Posted by <strong><?php echo htmlspecialchars($post['username']); ?></strong> 
+                                    Posted by <strong><?php echo htmlspecialchars($post['username']); ?></strong>
                                     on <?php echo date('F j, Y', strtotime($post['created_at'])); ?>
                                 </div>
 
@@ -137,7 +141,7 @@ $conn = $db->connectDB();
                                 </div>
                             </div>
 
-                            <?php
+            <?php
                         }
                     } else {
                         echo "<p>No posts available. Be the first to post!</p>";
@@ -154,5 +158,9 @@ $conn = $db->connectDB();
 
     <!-- Create Post Button -->
     <a href="login.php" class="create-post-btn">+</a>
+
+
+
+
 
 </div>

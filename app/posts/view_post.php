@@ -124,7 +124,7 @@ if (isset($_GET['delete_comment_id']) && isset($_SESSION['user_id'])) {
             border-radius: 8px;
             padding: 20px;
             margin: 20px auto; /* Center the container */
-            width: 80%; /* Adjust width as needed */
+            width: 100%; /* Adjust width as needed */
             max-width: 900px; /* Set max width for larger screens */
             color: white;
             text-align: center; /* Center-align the text */
@@ -186,6 +186,31 @@ if (isset($_GET['delete_comment_id']) && isset($_SESSION['user_id'])) {
             border: none;
             padding: 10px 15px;
             border-radius: 5px;
+        }
+
+        /* Add media queries for smaller screens */
+        @media (max-width: 576px) {
+            .post-container {
+                padding: 15px;
+                margin: 10px;
+            }
+
+            .post-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .post-category {
+                margin-top: 10px;
+            }
+
+            .comments-section {
+                margin-top: 20px;
+            }
+
+            .add-comment textarea {
+                width: 100%;
+            }
         }
     </style>
 </head>

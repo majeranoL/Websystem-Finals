@@ -20,6 +20,7 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
+    margin-bottom: 20px;
     width: 100%; /* Ensure it spans the viewport without overflow */
     box-sizing: border-box; /* Include padding in the total width */
     overflow-x: hidden; /* Prevent footer content from causing overflow */
